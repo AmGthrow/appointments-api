@@ -9,4 +9,5 @@ class Appointment(models.Model):
     comments = models.TextField()
 
     def __str__(self):
-        return self.start_time
+        time_format = "%I:%M %a %B %d, %Y"
+        return f"{self.start_time.strftime(time_format)} - {self.end_time.strftime(time_format)}"
