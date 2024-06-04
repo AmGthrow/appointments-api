@@ -1,11 +1,11 @@
 from django.db import models
+from patients.models import Patient
 
 
-# Create your models here.
 class Appointment(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    patients = models.CharField(max_length=30)
+    patients = models.ManyToManyField(Patient)
     comments = models.TextField()
 
     def __str__(self):
