@@ -4,8 +4,20 @@ from appointments.serializers import AppointmentSerializer
 
 
 class AppointmentViewSet(viewsets.ModelViewSet):
-    queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
+
+    def get_queryset(self):
+        queryset = Appointment.objects.all()
+        from_date = self.request.query_params.get("from_date")
+        to_date = self.request.query_params.get("to_date")
+
+        if from_date:
+            queryset = queryset.filter(start_time__gte=from_date)
+
+        if to_date:
+            queryset = queryset.filter(end_time__lte=to_date)
+
+        return queryset
 
     def create(self, request, *args, **kwargs):
         start_time = request.data.get("start_time")
