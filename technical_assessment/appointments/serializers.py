@@ -20,3 +20,8 @@ class AppointmentSerializer(serializers.ModelSerializer):
             "patients",
             "comments",
         )
+
+    def validate(self, attrs):
+        if attrs["end_time"] <= attrs["start_time"]:
+            raise serializers.ValidationError("End time must be later than start time.")
+        return attrs
