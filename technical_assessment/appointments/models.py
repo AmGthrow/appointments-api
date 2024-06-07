@@ -6,7 +6,7 @@ class Appointment(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     patients = models.ManyToManyField(Patient)
-    comments = models.TextField()
+    comments = models.TextField(blank=True)
 
     def __str__(self):
         time_format = "%I:%M %a %B %d, %Y"
