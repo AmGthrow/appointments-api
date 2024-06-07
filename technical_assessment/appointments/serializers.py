@@ -1,10 +1,11 @@
 from rest_framework import serializers
 
 from appointments.models import Appointment
+from patients.serializers import PatientSerializer
 
 
 class AppointmentSerializer(serializers.ModelSerializer):
-    patients = serializers.SerializerMethodField()
+    patients = PatientSerializer(many=True)
 
     class Meta:
         model = Appointment
@@ -15,6 +16,3 @@ class AppointmentSerializer(serializers.ModelSerializer):
             "patients",
             "comments",
         )
-
-    def get_patients(self, obj):
-        return [patient.name for patient in obj.patients.all()]
