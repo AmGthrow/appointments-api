@@ -13,7 +13,7 @@ source venv/bin/activate    # For Linux
 venv/Scripts/activate       # For Windows
 ```
 
-Install dependencies
+Install dependencies. If installation fails, please ensure you have Python 3.10.
 
 ```
 pip install -r requirements.txt
@@ -36,6 +36,7 @@ There are currently two apps being used
 ## Appointments
 
 ### Model
+
 ![image](https://github.com/AmGthrow/appointments-api/assets/54239564/53adbcf9-5e4b-443c-b27a-bbec0410126d)
 
 The Appointment object contains 4 fields:
@@ -46,6 +47,7 @@ The Appointment object contains 4 fields:
 - `comments` - a `TextField()` containing comments for the appointment
 
 ### API Endpoints
+
 ![image](https://github.com/AmGthrow/appointments-api/assets/54239564/a3bb4f81-e01d-45b6-8e23-5f2329d80af8)
 
 - `GET /appointments/` - list out the appointments that currently exist
@@ -60,6 +62,7 @@ The Appointment object contains 4 fields:
 ## Patients
 
 ### Model
+
 ![image](https://github.com/AmGthrow/appointments-api/assets/54239564/89c0bd16-8a17-4b56-ae79-ecd650c8a29e)
 
 The Patient object contains 1 field:
@@ -67,6 +70,7 @@ The Patient object contains 1 field:
 - `name` - a `CharField()` representing the patient's name
 
 ### API Endpoints
+
 ![image](https://github.com/AmGthrow/appointments-api/assets/54239564/40344368-15ad-44a3-9496-e50f0869691b)
 
 - `GET /patients/` - list out the patients that currently exist
