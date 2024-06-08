@@ -35,9 +35,8 @@ class AppointmentSerializer(serializers.ModelSerializer):
         return ALLOWED_TIME_START <= dt.time() <= ALLOWED_TIME_END
 
     def validate(self, attrs):
-        LOCAL_TIMEZONE = ZoneInfo("localtime")
-        start_datetime = attrs["start_time"].astimezone(LOCAL_TIMEZONE)
-        end_datetime = attrs["end_time"].astimezone(LOCAL_TIMEZONE)
+        start_datetime = attrs["start_time"].astimezone()
+        end_datetime = attrs["end_time"].astimezone()
 
         # Check if the start or end time is on a disallowed day
         if self.is_disallowed_day(start_datetime) or self.is_disallowed_day(
