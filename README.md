@@ -60,7 +60,7 @@ The Appointment object contains 4 fields:
 ## Patients
 
 ### Model
-![Uploading image.png…]()
+![image](https://github.com/AmGthrow/appointments-api/assets/54239564/89c0bd16-8a17-4b56-ae79-ecd650c8a29e)
 
 The Patient object contains 1 field:
 
