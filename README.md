@@ -36,6 +36,7 @@ There are currently two apps being used
 ## Appointments
 
 ### Model
+![image](https://github.com/AmGthrow/appointments-api/assets/54239564/53adbcf9-5e4b-443c-b27a-bbec0410126d)
 
 The Appointment object contains 4 fields:
 
@@ -45,6 +46,7 @@ The Appointment object contains 4 fields:
 - `comments` - a `TextField()` containing comments for the appointment
 
 ### API Endpoints
+![image](https://github.com/AmGthrow/appointments-api/assets/54239564/a3bb4f81-e01d-45b6-8e23-5f2329d80af8)
 
 - `GET /appointments/` - list out the appointments that currently exist
   - Query parameters:
@@ -58,12 +60,14 @@ The Appointment object contains 4 fields:
 ## Patients
 
 ### Model
+![Uploading image.png…]()
 
 The Patient object contains 1 field:
 
 - `name` - a `CharField()` representing the patient's name
 
 ### API Endpoints
+![image](https://github.com/AmGthrow/appointments-api/assets/54239564/40344368-15ad-44a3-9496-e50f0869691b)
 
 - `GET /patients/` - list out the patients that currently exist
 - `POST /patients/` - create a new patient
